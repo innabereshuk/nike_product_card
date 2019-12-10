@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font: 100 1.4rem/1.2 'Lato', sans-serif;;
+    color: #282828;
+    word-spacing: 3px;
+}
+
+a, button {
+    transition: all .4s ease-in;
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+
+}
+
+.container {
+    margin: auto;
+    width: 685px;
+    height: 390px;
+}
+
+.wrapper {
+    position: relative;
+    width: 685px;
+    height: 390px;
+}
+ 
+.wrapper > input[type="radio"] {
+   display: none;
+} 
+
+
+.slider {
+    height: inherit;
+	overflow: hidden;
+    position: relative;
+    width: inherit;
+    box-shadow: 15px -15px 40px rgba(0, 0, 0, 0.6), -15px 15px 50px rgba(0, 0, 0, 0.6);
+    background-color: #111a28;
+    
+}
+
+.slides {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+}
+
+
+.wrapper .controls {
+    left: 175px;
+    bottom: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 12px;
+	margin: 25px 5px 0;
+	position: relative;
+	width: 12px;
+    border-radius: 50%;
+}
+
+label:nth-of-type(1) {
+    background: #f7bf16;
+}
+
+label:nth-of-type(2) {
+    background: white;
+} 
+
+label:nth-of-type(3) {
+    background: #d13032;
+}
+
+label:nth-of-type(4) {
+    background: #29e3ea;
+}
+
+
+.wrapper label:after {
+    content: " ";
+	display: block;
+	height: 18px;
+	position: absolute;
+	width: 18px;
+    border-radius: 50%;
+} 
+
+.slides {
+   background-position: left;
+    /* background-repeat: no-repeat; */
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding: 23px;
+    
+}
+
+.slides {
+    /* background-repeat: no-repeat;
+    background-position-x: 35px;
+    background-position-y: 135px;
+    background-size: initial; */
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding: 23px;
+
+}
+
+.slide__img {
+    width: 50%;
+}
+
+.slide__img--image {
+    padding-top: 125px;
+   margin-left: -45px;
+    position: absolute;
+
+}
+
+.wrapper label:hover,
+.wrapper label:focus, 
+.wrapper label:active,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #1f273f;
+    border: 2px solid #535964;
+    transform: translate(-3px, 3px);
+    transition: all .2s ease-in-out;
+}
+
+.slides {
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s; 
+}
+
+#slide1:checked ~ .slider > .slide1,
+
+#slide2:checked ~ .slider > .slide2,
+
+#slide3:checked ~ .slider > .slide3,
+
+#slide4:checked ~ .slider > .slide4 {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+}
+
+
+.slide__content {
+    align-content: space-around;
+    margin: 5rem;
+    position: relative;
+}
+
+.slide__logo {
+    opacity: .9;
+    top: 0;
+}
+
+
+.slide__title {
+    font-size: 2.4rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    opacity: .7;
+}
+
+.slide__subtitle, p {
+   font-size:  1.4rem;
+   margin: 0;
+   opacity: .7;
+}
+
+
+.slide__icon {
+    display: inline-block;
+    margin: 2.6rem 2.6rem 2.6rem 0;
+ }
+
+.fa-star--yellow {
+    color: #f7bf16;
+}
+
+.fa-star--wite {
+    opacity: .7;
+}
+
+
+select {
+    width: 7rem;
+    height: 3.2rem;
+    background: transparent;
+    color: white;
+    opacity: .7;
+    font-size: 1.4rem;
+    outline: none;
+
+}
+
+select:visited,
+select:focus,
+select:active {
+    border: 1px solid #f7bf16;
+}
+
+option {
+    color: black;
+    border: 1px solid rgb(8, 45, 58);
+}
+
+.slide__form {
+    position: fixed;
+    z-index: 1;
+}
+
+
+.slide__form button  {
+    display: block;
+    width: 18.5rem;
+    height: 4rem;
+    margin-top: 3rem;
+    background-color: #202835;
+    border: 1px solid #ffffff;
+    opacity: .7;
+    padding: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.slide__form button:hover,
+button:focus,
+button:active {
+    background: #13356b;
+}
